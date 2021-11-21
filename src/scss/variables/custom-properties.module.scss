@@ -1,0 +1,30 @@
+@import '../scss-variables';
+
+:export {
+  --screen-xs: 480px;
+  --screen-sm: 640px;
+  --screen-md: 768px;
+  --screen-lg: 1024px;
+  --screen-xl: 1280px;
+  --screen-2xl: 1536px;
+  --screen-3xl: 2560px;
+
+  --ff-head: #{$ff-head}, system-ui, sans-serif;
+  --ff-body: #{$ff-body}, system-ui, sans-serif;
+
+  --fw-extralight: #{$fw-extralight};
+  --fw-light: #{$fw-light};
+  --fw-regular: #{$fw-regular};
+  --fw-medium: #{$fw-medium};
+  --fw-semibold: #{$fw-semibold};
+  --fw-bold: #{$fw-bold};
+  --fw-extrabold: #{$fw-extrabold};
+  --fw-black: #{$fw-black};
+
+  --clr-light: #e1e1e1;
+  --clr-dark: #1e1e1e;
+  --clr-primary: #005aaf;
+  --clr-secondary: #9e6100;
+
+  --flow-space: 1rem;
+}

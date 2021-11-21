@@ -1,0 +1,47 @@
+%headline-extralight {
+  @apply
+    font-head
+    font-extralight;
+}
+
+%headline-light {
+  @apply
+    font-head
+    font-light;
+}
+
+%headline-regular {
+  @apply
+    font-head
+    font-regular;
+}
+
+h1, .h1 {
+  @extend %headline-extralight;
+  @apply text-3xl;
+}
+
+h2, .h2 {
+  @extend %headline-extralight;
+  @apply text-2xl;
+}
+
+h3, .h3 {
+  @extend %headline-light;
+  @apply text-xl;
+}
+
+h4, .h4 {
+  @extend %headline-light;
+  @apply text-lg;
+}
+
+h5, .h5 {
+  @extend %headline-regular;
+  @apply text-md;
+}
+
+h6, .h6 {
+  @extend %headline-regular;
+  @apply text-sm;
+}

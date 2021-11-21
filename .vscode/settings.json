@@ -1,0 +1,11 @@
+{
+  "css.customData": [".vscode/css-custom-data.json"],
+  "eslint.options": {
+    "configFile": "eslint.config.cjs"
+  },
+  "search.exclude": {
+    "**/.svelte-kit": true,
+    "**/build": true,
+    "**/dist": true,
+  }
+}

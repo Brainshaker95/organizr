@@ -1,0 +1,16 @@
+@import 'tailwind';
+@import 'scss-variables';
+@import 'fonts';
+@import 'typography';
+
+html {
+  font-size: $fs-base-in-px;
+}
+
+body {
+  text-rendering: geometricPrecision;
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space);
+}
