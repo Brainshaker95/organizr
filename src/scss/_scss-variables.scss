@@ -1,4 +1,4 @@
-@use 'sass:math';
+@import 'functions';
 
 $ff-head: 'Titillium Web';
 $ff-body: 'Mukta';
@@ -32,50 +32,41 @@ $fonts: (
   ),
 );
 
-$fs-scale-min-width: 375;
+$fs-scale-min-width: 640;
 $fs-scale-max-width: 1280;
 $fs-base-in-px: 16px;
 
-@function rem($px) {
-  @return math.div($px, $fs-base-in-px) + rem;
-}
+$fs-xs-min: rem(14px);
+$fs-xs-max: rem(16px);
+$lh-xs-min: rem(22px);
+$lh-xs-max: rem(24px);
 
-$fs-xs-min: 0.75;
-$fs-xs-max: 1;
-$lh-xs-min: 1;
-$lh-xs-max: 1.125;
+$fs-sm-min: rem(16px);
+$fs-sm-max: rem(18px);
+$lh-sm-min: rem(24px);
+$lh-sm-max: rem(26px);
 
-$fs-sm-min: 0.875;
-$fs-sm-max: 1.125;
-$lh-sm-min: 1.725;
-$lh-sm-max: 1.875;
+$fs-md-min: rem(18px);
+$fs-md-max: rem(20px);
+$lh-md-min: rem(26px);
+$lh-md-max: rem(30px);
 
-// TODO: Use rem function everywhere?
-$fs-md-min: rem(16px);
-$fs-md-max: rem(22px);
-$lh-md-min: rem(24px);
-$lh-md-max: rem(32px);
-// $fs-md-min: 1;
-// $fs-md-max: 1.375;
-// $lh-md-min: 1.5;
-// $lh-md-max: 2;
+$fs-lg-min: rem(22px);
+$fs-lg-max: rem(24px);
+$lh-lg-min: rem(30px);
+$lh-lg-max: rem(32px);
 
-$fs-lg-min: 1.125;
-$fs-lg-max: 1.75;
-$lh-lg-min: 1.625;
-$lh-lg-max: 2.5;
+$fs-xl-min: rem(26px);
+$fs-xl-max: rem(32px);
+$lh-xl-min: rem(38px);
+$lh-xl-max: rem(46px);
 
-$fs-xl-min: 1.25;
-$fs-xl-max: 2.5;
-$lh-xl-min: 1.75;
-$lh-xl-max: 3.5;
+$fs-2xl-min: rem(30px);
+$fs-2xl-max: rem(38px);
+$lh-2xl-min: rem(40px);
+$lh-2xl-max: rem(48px);
 
-$fs-2xl-min: 1.5;
-$fs-2xl-max: 3.25;
-$lh-2xl-min: 2.25;
-$lh-2xl-max: 4.5;
-
-$fs-3xl-min: 2;
-$fs-3xl-max: 4;
-$lh-3xl-min: 2.5;
-$lh-3xl-max: 5.5;
+$fs-3xl-min: rem(38px);
+$fs-3xl-max: rem(46px);
+$lh-3xl-min: rem(46px);
+$lh-3xl-max: rem(56px);
