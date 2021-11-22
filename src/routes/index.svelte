@@ -7,53 +7,53 @@
 </svelte:head>
 
 <section>
-  <h1>
+  <h1 class="text-primary">
     Test h1 - Lorem ipsum dolor, sit amet consectetur.
   </h1>
 
-  <h2>
+  <h2 class="text-primary">
     Test h2 - Lorem ipsum dolor, sit amet consectetur.
   </h2>
 
-  <h3>
+  <h3 class="text-primary">
     Test h3 - Lorem ipsum dolor, sit amet consectetur adipisicing elit inventore.
   </h3>
 
-  <h4>
+  <h4 class="text-primary">
     Test h4 - Lorem ipsum dolor, sit amet consectetur adipisicing elit inventore consequuntur in corrupti.
   </h4>
 
-  <h5>
+  <h5 class="text-primary">
     Test h5 - Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore consequuntur in corrupti.
   </h5>
 
-  <h6>
+  <h6 class="text-primary">
     Test h6 - Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore consequuntur in corrupti impedit.
   </h6>
 
   <div class="py-8"></div>
 
-  <h1 class="font-body">
+  <h1 class="text-secondary font-body">
     Test h1 - Lorem ipsum dolor, sit amet consectetur.
   </h1>
 
-  <h2 class="font-body">
+  <h2 class="text-secondary font-body">
     Test h2 - Lorem ipsum dolor, sit amet consectetur.
   </h2>
 
-  <h3 class="font-body">
+  <h3 class="text-secondary font-body">
     Test h3 - Lorem ipsum dolor, sit amet consectetur adipisicing elit inventore.
   </h3>
 
-  <h4 class="font-body">
+  <h4 class="text-secondary font-body">
     Test h4 - Lorem ipsum dolor, sit amet consectetur adipisicing elit inventore consequuntur in corrupti.
   </h4>
 
-  <h5 class="font-body">
+  <h5 class="text-secondary font-body">
     Test h5 - Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore consequuntur in corrupti.
   </h5>
 
-  <h6 class="font-body">
+  <h6 class="text-secondary font-body">
     Test h6 - Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore consequuntur in corrupti impedit.
   </h6>
 

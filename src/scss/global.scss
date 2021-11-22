@@ -16,6 +16,13 @@
   }
 }
 
+.dark {
+  *, *::before, *::after {
+    --clr-primary: hsl(var(--clr-primary-hue), 85%, 60%);
+    --clr-secondary: hsl(var(--clr-secondary-hue), 85%, 60%);
+  }
+}
+
 html {
   font-size: $fs-base-in-px;
 }

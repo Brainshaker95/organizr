@@ -23,8 +23,11 @@
 
   --clr-light: #e1e1e1;
   --clr-dark: #1e1e1e;
-  --clr-primary: #005aaf;
-  --clr-secondary: #9e6100;
+
+  --clr-primary-hue: 200;
+  --clr-secondary-hue: 320;
+  --clr-primary: hsl(var(--clr-primary-hue), 100%, 31%);
+  --clr-secondary: hsl(var(--clr-secondary-hue), 100%, 37.5%);
 
   --flow-space: 1rem;
 }
