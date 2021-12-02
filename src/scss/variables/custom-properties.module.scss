@@ -1,14 +1,6 @@
 @import '../scss-variables';
 
 :export {
-  --screen-xs: 480px;
-  --screen-sm: 640px;
-  --screen-md: 768px;
-  --screen-lg: 1024px;
-  --screen-xl: 1280px;
-  --screen-2xl: 1536px;
-  --screen-3xl: 2560px;
-
   --ff-head: #{$ff-head}, system-ui, sans-serif;
   --ff-body: #{$ff-body}, system-ui, sans-serif;
 

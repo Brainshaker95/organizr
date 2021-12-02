@@ -11,16 +11,23 @@ module.exports = {
       './src/app.html',
     ],
   },
+  corePlugins: {
+    padding: false,
+    margin: false,
+    height: false,
+    width: false,
+    textAlign: false,
+  },
   theme: {
     extend: {
       screens: {
-        xs: 'var(--screen-xs)',
-        sm: 'var(--screen-sm)',
-        md: 'var(--screen-md)',
-        lg: 'var(--screen-lg)',
-        xl: 'var(--screen-xl)',
-        '2xl': 'var(--screen-2xl)',
-        '3xl': 'var(--screen-3xl)',
+        xs: '480px',
+        sm: '640px',
+        md: '768px',
+        lg: '1024px',
+        xl: '1280px',
+        '2xl': '1536px',
+        '3xl': '2560px',
       },
       colors: {
         light: 'var(--clr-light)',
@@ -57,6 +64,7 @@ module.exports = {
     extend: {},
   },
   plugins: [
+    require('./tailwind-logical.cjs'),
     ({ addComponents, theme }) => {
       addComponents({
         // TODO: Change to css

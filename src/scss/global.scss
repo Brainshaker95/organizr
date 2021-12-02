@@ -32,5 +32,17 @@ body {
 }
 
 .flow > * + * {
-  margin-top: var(--flow-space);
+  margin-block-start: var(--flow-space);
+}
+
+.aspect-16-by-9 {
+  aspect-ratio: 16 / 9;
+}
+
+.auto-grid {
+  --grid-col-max-w: 25ch;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--grid-col-max-w), 1fr));
+  gap: clamp(1em, 3vw, 2em);
 }
