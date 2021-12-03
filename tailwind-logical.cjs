@@ -21,6 +21,9 @@ const tailwindLogical = ({ addUtilities, e, theme }) => {
     const getKey = (letter, key) => e(prefixNegativeModifiers(`${prefix}${letter}`, key));
 
     addUtilities(values.map(([key, value]) => ({
+      [`.${getKey('', key)}`]: {
+        [identifier]: value,
+      },
       [`.${getKey('y', key)}`]: {
         [`${identifier}Block`]: value,
       },
@@ -76,6 +79,93 @@ const tailwindLogical = ({ addUtilities, e, theme }) => {
   addWidthOrHeightUtilites('width', 'w', 'inline');
   addWidthOrHeightUtilites('height', 'h', 'block');
 
+  addUtilities(getThemeEntries('inset').map(([key, value]) => (
+    {
+      [`.${e(prefixNegativeModifiers('inset', key))}`]: {
+        insetBlock: value,
+        insetInline: value,
+      },
+      [`.${e(prefixNegativeModifiers('inset-y', key))}`]: {
+        insetBlock: value,
+      },
+      [`.${e(prefixNegativeModifiers('inset-x', key))}`]: {
+        insetInline: value,
+      },
+      [`.${e(prefixNegativeModifiers('top', key))}`]: {
+        insetBlockStart: value,
+      },
+      [`.${e(prefixNegativeModifiers('bottom', key))}`]: {
+        insetBlockEnd: value,
+      },
+      [`.${e(prefixNegativeModifiers('left', key))}`]: {
+        insetInlineStart: value,
+      },
+      [`.${e(prefixNegativeModifiers('right', key))}`]: {
+        insetInlineEnd: value,
+      },
+    }
+  )));
+
+  addUtilities(getThemeEntries('borderWidth').map(([theKey, value]) => {
+    const key = theKey.toLowerCase() === 'default' ? '' : `-${theKey}`;
+
+    return {
+      [`.${e(`border${key}`)}`]: {
+        borderWidth: value,
+      },
+      [`.${e(`border-t${key}`)}`]: {
+        borderBlockStartWidth: value,
+      },
+      [`.${e(`border-b${key}`)}`]: {
+        borderBlockEndWidth: value,
+      },
+      [`.${e(`border-l${key}`)}`]: {
+        borderInlineStartWidth: value,
+      },
+      [`.${e(`border-r${key}`)}`]: {
+        borderInlineEndWidth: value,
+      },
+    };
+  }));
+
+  addUtilities(getThemeEntries('borderRadius').map(([theKey, value]) => {
+    const key = theKey.toLowerCase() === 'default' ? '' : `-${theKey}`;
+
+    return {
+      [`.${e(`rounded${key}`)}`]: {
+        borderRadius: value,
+      },
+      [`.${e(`rounded-tl${key}`)}`]: {
+        borderStartStartRadius: value,
+      },
+      [`.${e(`rounded-tr${key}`)}`]: {
+        borderStartEndRadius: value,
+      },
+      [`.${e(`rounded-bl${key}`)}`]: {
+        borderEndStartRadius: value,
+      },
+      [`.${e(`rounded-br${key}`)}`]: {
+        borderEndEndRadius: value,
+      },
+      [`.${e(`rounded-t${key}`)}`]: {
+        borderStartStartRadius: value,
+        borderStartEndRadius: value,
+      },
+      [`.${e(`rounded-b${key}`)}`]: {
+        borderEndStartRadius: value,
+        borderEndEndRadius: value,
+      },
+      [`.${e(`rounded-l${key}`)}`]: {
+        borderStartStartRadius: value,
+        borderEndStartRadius: value,
+      },
+      [`.${e(`rounded-r${key}`)}`]: {
+        borderStartEndRadius: value,
+        borderEndEndRadius: value,
+      },
+    };
+  }));
+
   addUtilities({
     '.text-left': {
       textAlign: 'start',
@@ -83,99 +173,13 @@ const tailwindLogical = ({ addUtilities, e, theme }) => {
     '.text-right': {
       textAlign: 'end',
     },
+    '.text-center': {
+      textAlign: 'center',
+    },
+    '.text-justify': {
+      textAlign: 'justify',
+    },
   }, utilityConfig);
-
-  // const inset = Object.entries(theme('inset'));
-
-  // const insetShorthandUtilities = inset.map(([key, value]) => (
-  //   {
-  //     [`.${e(prefixNegativeModifiers('inset-block', key))}`]: {
-  //       insetBlock: value
-  //     },
-  //     [`.${e(prefixNegativeModifiers('inset-inline', key))}`]: {
-  //       insetInline: value
-  //     }
-  //   }
-  // ));
-
-  // const insetSingleSideUtilities = inset.map(([key, value]) => (
-  //   {
-  //     [`.${e(prefixNegativeModifiers('block-start', key))}`]: {
-  //       insetBlockStart: value
-  //     },
-  //     [`.${e(prefixNegativeModifiers('block-end', key))}`]: {
-  //       insetBlockEnd: value
-  //     },
-  //     [`.${e(prefixNegativeModifiers('inline-start', key))}`]: {
-  //       insetInlineStart: value
-  //     },
-  //     [`.${e(prefixNegativeModifiers('inline-end', key))}`]: {
-  //       insetInlineEnd: value
-  //     }
-  //   }
-  // ));
-
-  // const borderWidth = Object.entries(theme('borderWidth'));
-
-  // const borderWidthUtilities = borderWidth.map(([key, value]) => {
-  //   const keyString = key.toLowerCase() === 'default' ? '' : `-${key}`;
-  //   return {
-  //     [`.${e(`border-bs${keyString}`)}`]: {
-  //       borderBlockStartWidth: value
-  //     },
-  //     [`.${e(`border-be${keyString}`)}`]: {
-  //       borderBlockEndWidth: value
-  //     },
-  //     [`.${e(`border-is${keyString}`)}`]: {
-  //       borderInlineStartWidth: value
-  //     },
-  //     [`.${e(`border-ie${keyString}`)}`]: {
-  //       borderInlineEndWidth: value
-  //     }
-  //   };
-  // });
-
-  // const borderRadius = Object.entries(theme('borderRadius'));
-
-  // const borderRadiusSideUtilities = borderRadius.map(([key, value]) => {
-  //   const keyString = key.toLowerCase() === 'default' ? '' : `-${key}`;
-  //   return {
-  //     [`.${e(`rounded-bs${keyString}`)}`]: {
-  //       borderStartStartRadius: value,
-  //       borderStartEndRadius: value
-  //     },
-  //     [`.${e(`rounded-be${keyString}`)}`]: {
-  //       borderEndStartRadius: value,
-  //       borderEndEndRadius: value
-  //     },
-  //     [`.${e(`rounded-is${keyString}`)}`]: {
-  //       borderStartStartRadius: value,
-  //       borderEndStartRadius: value
-  //     },
-  //     [`.${e(`rounded-ie${keyString}`)}`]: {
-  //       borderStartEndRadius: value,
-  //       borderEndEndRadius: value
-  //     }
-  //   };
-  // });
-
-  // const borderRadiusCornerUtilities = borderRadius.map(([key, value]) => {
-  //   const keyString = key.toLowerCase() === 'default' ? '' : `-${key}`;
-  //   return {
-  //     [`.${e(`rounded-ss${keyString}`)}`]: {
-  //       borderStartStartRadius: value
-  //     },
-  //     [`.${e(`rounded-se${keyString}`)}`]: {
-  //       borderStartEndRadius: value
-  //     },
-  //     [`.${e(`rounded-es${keyString}`)}`]: {
-  //       borderEndStartRadius: value
-  //     },
-  //     [`.${e(`rounded-ee${keyString}`)}`]: {
-  //       borderEndEndRadius: value
-  //     }
-  //   };
-  // });
 };
 
 module.exports = tailwindLogical;
